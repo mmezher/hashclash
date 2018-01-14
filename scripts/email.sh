@@ -1,4 +1,5 @@
 #!/bin/bash
+# Email script based off of directions for email sending via https://kompjuteras.com/en/how-to-send-email-with-mailx-and-external-google-smtp-server-from-centos-linux/
 # Email bash script to email results during HashClash process.
 # Change $YOUREMAILHERE to whatever your email is. Ask for the username and password to use in this script!
 # User must have heirloom-mailx installed.
