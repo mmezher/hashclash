@@ -37,6 +37,8 @@ else
 	fi
 fi
 
+#need to ask for input of username and password for email. 
+
 function doforward {
 	$FORWARD -w $1 -f $1/lowerpath.bin.gz --normalt01 -t 1 --trange $(($TTT-3)) --threads $CPUS || return 1
 	$FORWARD -w $1 -a 500000 -t $(($TTT-1)) --trange 0 --threads $CPUS || return 1
