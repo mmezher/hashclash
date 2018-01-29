@@ -26,6 +26,10 @@
 
  `sudo apt-get install heirloom-mailx`
  `sudo apt-get install mailutils`
+ 
+ - openssl (for email purposes)
+ 
+ `sudo apt-get install openssl`
   
  - Optional: CUDA
  
