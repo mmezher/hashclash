@@ -6,7 +6,6 @@ export HELPER=$BINDIR/md5_diffpathhelper
 export FORWARD=$BINDIR/md5_diffpathforward
 export BACKWARD=$BINDIR/md5_diffpathbackward
 export CONNECT=$BINDIR/md5_diffpathconnect
-export EMAIL=$BINDIR/email
 export CPUS=`cat /proc/cpuinfo | grep "^processor" | wc -l`
 if [ ! -z $MAXCPUS ]; then
 	if [ $CPUS -gt $MAXCPUS ]; then
@@ -120,6 +119,7 @@ while true; do
 		if [ `cat ${file1}.coll | md5sum | cut -d' ' -f1` = `cat ${file2}.coll | md5sum | cut -d' ' -f1` ]; then
 			echo "Collision generated: ${file1}.coll ${file2}.coll"
 			md5sum ${file1}.coll ${file2}.coll
+			sh ./email.sh 
 			exit
 		fi
 	fi
