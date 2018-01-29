@@ -21,8 +21,13 @@
   Override default boost version 1.57.0 and/or installation directory as follows:
   
   `BOOST_VERSION=1.65.1 BOOST_INSTALL_PREFIX=$HOME/boost/boost-1.65.1 ./install_boost.sh`
+- heirloom-mailx and mailutils for emailing collisions to oneself
+
+ `sudo apt-get install heirloom-mailx`
+ `sudo apt-get install mailutils`
   
  - Optional: CUDA
+ 
   
 ## Building
 
