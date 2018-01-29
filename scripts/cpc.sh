@@ -6,6 +6,7 @@ export HELPER=$BINDIR/md5_diffpathhelper
 export FORWARD=$BINDIR/md5_diffpathforward
 export BACKWARD=$BINDIR/md5_diffpathbackward
 export CONNECT=$BINDIR/md5_diffpathconnect
+export EMAIL=$BINDIR/email
 export CPUS=`cat /proc/cpuinfo | grep "^processor" | wc -l`
 if [ ! -z $MAXCPUS ]; then
 	if [ $CPUS -gt $MAXCPUS ]; then
