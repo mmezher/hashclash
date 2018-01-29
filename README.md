@@ -3,7 +3,7 @@
 ## Feedback & pingback appreciated
 
 ## Requirements
-
+- An email account for results to be sent to (e.g. fakeaccount@gmail.com)
 - C++11 compiler (e.g. g++)
 - make
 - autoconf & automake & libtool
@@ -21,6 +21,7 @@
   Override default boost version 1.57.0 and/or installation directory as follows:
   
   `BOOST_VERSION=1.65.1 BOOST_INSTALL_PREFIX=$HOME/boost/boost-1.65.1 ./install_boost.sh`
+  
 - heirloom-mailx and mailutils for emailing collisions to oneself
 
  `sudo apt-get install heirloom-mailx`
