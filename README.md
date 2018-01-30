@@ -45,7 +45,7 @@
 - heirloom-mailx and mailutils for emailing collisions to oneself
 
   `sudo apt-get install heirloom-mailx` or  `sudo yum install mailx`
-  `sudo apt-get install mailutils`
+  `sudo apt-get install mailutils` (Amazon Linux does not require this) 
  
 - openssl (for email purposes)
  
