@@ -4,21 +4,39 @@
 
 ## Requirements
 - An email account for results to be sent to (e.g. fakeaccount@gmail.com)
-- C++11 compiler (e.g. g++)
+- C++11 compiler (e.g. g++). In Amazon Linux, installation command is
+
+  `sudo yum install gcc-c++`
+  
 - make
+
 - autoconf & automake & libtool
 
-  `sudo apt-get install autoconf automake libtool`
+  `sudo apt-get install autoconf automake libtool` or `sudo yum install autoconf automake libtool`
   
 - zlib & bzip2 libraries
 
-  `sudo apt-get install zlib1g-dev libbz2-dev`
+  `sudo apt-get install zlib1g-dev libbz2-dev` or `sudo yum install zlib bzip2-devel`
   
+- git 
+
+  `sudo yum install git`
+  
+- this GitHub repository
+
+  `git clone https://github.com/mmezher/hashclash/`
+  
+- if using Amazon Free Tier or low memory, consider creating a swapfile
+
+  `sudo dd if=/dev/zero of=/swapfile bs=1024 count=65536`
+  `sudo mkswap /swapfile` or `sudo swapon /swapfile`
+
 - local boost C++ libraries (preferable version 1.57.0)
 
+  `cd hashclash`
   `./install_boost.sh` 
 
-  Override default boost version to 1.57.0 and/or installation directory as follows:
+  If boost already installed, override default boost version to 1.57.0 and/or installation directory as follows:
   
   `BOOST_VERSION=1.65.1 BOOST_INSTALL_PREFIX=$HOME/boost/boost-1.65.1 ./install_boost.sh`
   
