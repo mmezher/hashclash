@@ -18,7 +18,7 @@
 
   `./install_boost.sh` 
 
-  Override default boost version 1.57.0 and/or installation directory as follows:
+  Override default boost version to 1.57.0 and/or installation directory as follows:
   
   `BOOST_VERSION=1.65.1 BOOST_INSTALL_PREFIX=$HOME/boost/boost-1.65.1 ./install_boost.sh`
   
@@ -27,12 +27,20 @@
   `sudo apt-get install heirloom-mailx`
   `sudo apt-get install mailutils`
  
- - openssl (for email purposes)
+- openssl (for email purposes)
  
   `sudo apt-get install openssl`
   
- - Optional: CUDA
- 
+- Optional: CUDA
+
+## Setting up Email Functionality
+
+- Create a certificate for gmail email to be used (Note: you may have to switch off some securitty settings on this gmail account.
+
+  `mkdir /.certs`
+  `certutil -N -d "/.certs"`
+  `openssl s_client c-connect smtp.gmail.com:465 | sed -ne '/BEGIN CERTIFICATE-/,/END CERTIFICATE-/p' > "~/.certs/gmail.crt" certutil -A -n "Google Internet Authority" -t "C," -d`
+  
 ## Building
 
 - Build configure script
