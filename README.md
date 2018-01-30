@@ -54,7 +54,13 @@
 - Build programs
 
   `make`
+## Connecting to AWS Server via SSH in Terminal
 
+- Create key to use for your EC2 instance in AWS
+- Using key, ssh into the instance. ec2-user-name is default ec2-user. 
+
+  `ssh -i key-name.pem ${ec2-user-name}@${ec2-server-name-here.compute.amazon.com}`
+ 
 ## Create your own chosen-prefix collisions
 
 - Create temporary working directory (in top directory)
