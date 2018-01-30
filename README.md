@@ -29,11 +29,13 @@
 - if using Amazon Free Tier or low memory, consider creating a swapfile
 
   `sudo dd if=/dev/zero of=/swapfile bs=1024 count=65536`
+  
   `sudo mkswap /swapfile` or `sudo swapon /swapfile`
 
 - local boost C++ libraries (preferable version 1.57.0)
 
   `cd hashclash`
+  
   `./install_boost.sh` 
 
   If boost already installed, override default boost version to 1.57.0 and/or installation directory as follows:
@@ -42,12 +44,12 @@
   
 - heirloom-mailx and mailutils for emailing collisions to oneself
 
-  `sudo apt-get install heirloom-mailx`
+  `sudo apt-get install heirloom-mailx` or  `sudo yum install mailx`
   `sudo apt-get install mailutils`
  
 - openssl (for email purposes)
  
-  `sudo apt-get install openssl`
+  `sudo apt-get install openssl` or `sudo yum install openssl`
   
 - Optional: CUDA
 
@@ -56,7 +58,9 @@
 - Create a certificate for gmail email to be used (Note: you may have to switch off some securitty settings on this gmail account.
 
   `mkdir /.certs`
+  
   `certutil -N -d "/.certs"`
+  
   `openssl s_client c-connect smtp.gmail.com:465 | sed -ne '/BEGIN CERTIFICATE-/,/END CERTIFICATE-/p' > "~/.certs/gmail.crt" certutil -A -n "Google Internet Authority" -t "C," -d`
   
 ## Building
@@ -72,12 +76,13 @@
 - Build programs
 
   `make`
+  
 ## Connecting to AWS Server via SSH in Terminal
 
 - Create key to use for your EC2 instance in AWS
 - Using key, ssh into the instance. ec2-user-name is default ec2-user. 
 
-  `ssh -i key-name.pem ${ec2-user-name}@${ec2-server-name-here.compute.amazon.com}`
+  `ssh -i key-name.pem $(ec2-user-name)@$(ec2-server-name-here.compute.amazon.com)`
  
 ## Create your own chosen-prefix collisions
 
