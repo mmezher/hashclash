@@ -45,7 +45,8 @@
 - heirloom-mailx and mailutils for emailing collisions to oneself
 
   `sudo apt-get install heirloom-mailx` or  `sudo yum install mailx`
-  `sudo apt-get install mailutils` (Amazon Linux does not require this) 
+  
+  `sudo apt-get install mailutils` (Amazon Linux does not require mailutils) 
  
 - openssl (for email purposes)
  
@@ -55,13 +56,13 @@
 
 ## Setting up Email Functionality
 
-- Create a certificate for gmail email to be used (Note: you may have to switch off some securitty settings on this gmail account.
+- Create a certificate for gmail email to be used (Note: you may have to switch off some securitty settings on this gmail account.)
 
-  `mkdir /.certs`
+  `sudo mkdir /home/ec2-user/certs`
   
-  `certutil -N -d "/.certs"`
+  `sudo certutil -N -d "/home/ec2-user/certs"`
   
-  `openssl s_client c-connect smtp.gmail.com:465 | sed -ne '/BEGIN CERTIFICATE-/,/END CERTIFICATE-/p' > "~/.certs/gmail.crt" certutil -A -n "Google Internet Authority" -t "C," -d`
+  `sudo openssl s_client c-connect smtp.gmail.com:465 | sed -ne '/BEGIN CERTIFICATE-/,/END CERTIFICATE-/p' > "/home/ec2-user/certs/gmail.crt" certutil -A -n "Google Internet Authority" -t "C," -d`
   
 ## Building
 
@@ -80,7 +81,7 @@
 ## Connecting to AWS Server via SSH in Terminal
 
 - Create key to use for your EC2 instance in AWS
-- Using key, ssh into the instance. ec2-user-name is default ec2-user. 
+- Using key, ssh into the instance. ec2-user-name is default ec2-user.
 
   `ssh -i key-name.pem $(ec2-user-name)@$(ec2-server-name-here.compute.amazon.com)`
  
@@ -94,7 +95,7 @@
   
 - Run script
 
-  `../scripts/cpc.sh <prefix.filename1> <prefix.filename2>`
+  `sudo ../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password> <receiving email>`
 
 - Monitor progress of script
 
@@ -104,5 +105,5 @@
   * kill script & any running md5_diffpathhelper programs
   * let K be the number of the last `workdir$(K)` directory
   * restart script:
-    `../scripts/cpc.sh <prefix.filename1> <prefix.filename2> $((K-1))`
+    `../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password> <receiving email> $((K-1))`
 
