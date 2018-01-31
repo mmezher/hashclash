@@ -25,4 +25,4 @@ googcerts="/home/ec2-user/certs/gmail.crt"
 #  openssl s_client -connect smtp.gmail.com:465 | sed -ne '/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p' > "~/.certs/gmail.crt" certutil -A -n "Google Internet Authority" -t "C," -d "~/.certs" -i "~/.certs/gmail.crt"
 #fi
 # Actually sending emails through.
-for i in `find -name '*.coll'`; do echo "Attached are your collision files. Enjoy!" | mailx -a $i -v -s "Your Collision is Ready" -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from="$user""(Hash User)" -S smtp-auth-user="$user" -S smtp-auth-password="$pass" -S ssl-verify=ignore -S nss-config-dir="$certs" $PUTYOUREMAILHERE; done
+for i in `find / -name '*.coll'`; do echo "Attached are your collision files. Enjoy!" | mailx -a $i -v -s "Your Collision is Ready" -S smtp-use-starttls -S ssl-verify=ignore -S smtp-auth=login -S smtp=smtp://smtp.gmail.com:587 -S from="$user""(Hash User)" -S smtp-auth-user="$user" -S smtp-auth-password="$pass" -S ssl-verify=ignore -S nss-config-dir="$certs" $PUTYOUREMAILHERE; done
