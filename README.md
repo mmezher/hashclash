@@ -1,6 +1,10 @@
 # Project HashClash - MD5 Collision Creation for AWS Server Use
 
-## This copy of HashClash has been altered to allow for emails to be sent while process is running to say when MD5 collision is complete. Original HashClash program, written by Marc Stevens, is entirely his own work. This version is meant to be run on an EC2 Amazon Linux Server with >=2 CPUs and >= 2 GB RAM. 
+## This copy of HashClash has been altered to allow for emails to be sent while process is running to say when MD5 collision is complete. 
+
+The original HashClash program, written by Marc Stevens, is entirely his own work. This version is meant to be run on an EC2 Amazon Linux Server with >=2 CPUs and >= 2 GB RAM. 
+
+### Important Note: Before doing anything else, change the $PUTYOUREMAILHERE token in /scripts/email.sh to your receiving email. If you don't, you will not receive an email when the program completes! 
 
 ## Requirements
 - An email account for results to be sent to (e.g. fakeaccount@gmail.com)
