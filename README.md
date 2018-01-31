@@ -20,7 +20,7 @@ The original HashClash program, written by Marc Stevens, is entirely his own wor
   
 - zlib & bzip2 libraries
 
-  `sudo apt-get install zlib1g-dev libbz2-dev` or `sudo yum install zlib bzip2-devel`
+  `sudo apt-get install zlib1g-dev libbz2-dev` or `sudo yum install zlib-devel bzip2-devel`
   
 - git 
 
