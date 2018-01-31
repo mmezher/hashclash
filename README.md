@@ -109,5 +109,5 @@ The original HashClash program, written by Marc Stevens, is entirely his own wor
   * kill script & any running md5_diffpathhelper programs
   * let K be the number of the last `workdir$(K)` directory
   * restart script:
-    `../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password> <receiving email> $((K-1))`
+    `../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password> $((K-1))`
 
