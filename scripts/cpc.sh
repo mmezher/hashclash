@@ -19,6 +19,8 @@ mkdir data || exit 1
 
 file1=$1
 file2=$2
+send=$3
+pass=$4
 
 if [ -f "$file1" -a -f "$file2" ]; then
 	echo "Chosen-prefix file 1: $file1"
@@ -28,16 +30,16 @@ else
 	exit 1
 fi
 
-if [ "$3" = "" ] ; then
+if [ "$5" = "" ] ; then
 	$BIRTHDAYSEARCH --inputfile1 "$file1" --inputfile2 "$file2" --hybridbits 0 --pathtyperange 2 --maxblocks 9 --maxmemory 100 --threads $CPUS --cuda_enable
 else
-	if [ "$4" != "" ]; then
+	if [ "$6" != "" ]; then
 		cp $file1 file1.bin
 		cp $file2 file2.bin
 	fi
 fi
 
-#need to ask for input of username and password for email. 
+# TODO(1/30): For better usability, should aim to ask for input of username and password for email. 
 
 function doforward {
 	$FORWARD -w $1 -f $1/lowerpath.bin.gz --normalt01 -t 1 --trange $(($TTT-3)) --threads $CPUS || return 1
@@ -90,7 +92,7 @@ function docollfind {
 
 cp file1.bin file1_0.bin
 cp file2.bin file2_0.bin
-let k=$3
+let k=$5
 if [ "$k" = "" ]; then
 	let k=0
 fi
@@ -121,7 +123,7 @@ while true; do
 		if [ `cat ${file1}.coll | md5sum | cut -d' ' -f1` = `cat ${file2}.coll | md5sum | cut -d' ' -f1` ]; then
 			echo "Collision generated: ${file1}.coll ${file2}.coll"
 			md5sum ${file1}.coll ${file2}.coll
-			sh ./email.sh 
+			sh ./email.sh $send $pass
 			exit
 		fi
 	fi
