@@ -13,8 +13,8 @@ echo "$pass"
 rec=$3
 echo "$rec"
 # Creates folder for Google certificate for use in email. This has been added to instructions rather than automated.
-certs="~/.certs"
-googcerts="~/.certs/gmail.crt"
+certs="/home/ec2-user/certs"
+googcerts="/home/ec2-user/certs/gmail.crt"
 # count=100
 #if [ "$count" -eq 10 ]
 #then
