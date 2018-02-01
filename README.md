@@ -90,7 +90,18 @@ The original HashClash program, written by Marc Stevens, is entirely his own wor
   `ssh -i key-name.pem $(ec2-user-name)@$(ec2-server-name-here.compute.amazon.com)`
  
 ## Create your own chosen-prefix collisions
+- Go into /scripts/email.sh
 
+  `cd scripts`
+  
+  `vi email.sh`
+
+- Change $PUTYOUREMAILHERE to your receiving email
+
+- Go back to hashclash folder
+
+  `cd ..`
+  
 - Create temporary working directory (in top directory)
 
   `mkdir cpc_workdir`
@@ -99,7 +110,7 @@ The original HashClash program, written by Marc Stevens, is entirely his own wor
   
 - Run script
 
-  `sudo ../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password> <receiving email>`
+  `sudo ../scripts/cpc.sh <prefix.filename1> <prefix.filename2> <sending email> <sending email password>`
 
 - Monitor progress of script
 
